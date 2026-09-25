@@ -172,6 +172,7 @@ html, body {
 
 /* ============ PORTFOLIO ============ */
 .kpi { text-align: center; padding: 2px 18px; border-left: 1px solid #e5e5e5; min-width: max-content; }
+.kpi:first-child { border-left: none; }
 .kpi .slds-text-title { white-space: nowrap; }
 .kpi .kpi-num { font-size: 20px; font-weight: 700; line-height: 1.1; }
 .kpi-red .kpi-num { color: var(--red); }
