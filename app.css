@@ -154,6 +154,8 @@ html, body {
 .page { padding: 12px 12px 28px; }
 .phicon { display: inline-flex; align-items: center; justify-content: center; width: 2.5rem; height: 2.5rem; border-radius: 0.5rem; padding: 0.5rem; }
 .phicon .slds-icon { width: 1.5rem; height: 1.5rem; --sds-c-icon-color-foreground-default: #fff; fill: #fff; }
+.phicon-health { background: #78BE20; }
+.phicon .steth { width: 1.6rem; height: 1.6rem; }
 .slds-page-header { border-radius: 6px; }
 .slds-card { border-radius: 6px; }
 .result-label { font-size: 12px; color: var(--muted); padding: 8px 4px 0; }

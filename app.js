@@ -50,8 +50,12 @@
             '<div class="slds-card__body slds-card__body_inner">' + body + '</div></article>';
     }
     function opts(arr) { return arr.map(function (v) { return { label: v, value: v }; }); }
-    function pageHeader(ic, title, meta, actions) {
-        var fig = '<span class="slds-icon_container phicon slds-icon-standard-' + ic.replace(/_/g, '-') + '">' + icon('standard', ic, 'slds-icon_medium') + '</span>';
+    var STETH_SVG = '<svg class="steth" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' +
+        '<path d="M4.8 2.3A.3.3 0 1 0 5 2H4a2 2 0 0 0-2 2v5a6 6 0 0 0 6 6 6 6 0 0 0 6-6V4a2 2 0 0 0-2-2h-1a.2.2 0 1 0 .3.3"/>' +
+        '<path d="M8 15v1a6 6 0 0 0 6 6 6 6 0 0 0 6-6v-4"/>' +
+        '<circle cx="20" cy="10" r="2"/></svg>';
+    function pageHeader(ic, title, meta, actions, customFig) {
+        var fig = customFig || ('<span class="slds-icon_container phicon slds-icon-standard-' + ic.replace(/_/g, '-') + '">' + icon('standard', ic, 'slds-icon_medium') + '</span>');
         return '<div class="slds-page-header slds-page-header_joined"><div class="slds-page-header__row">' +
             '<div class="slds-page-header__col-title"><div class="slds-media"><div class="slds-media__figure">' +
             fig + '</div><div class="slds-media__body">' +
@@ -94,7 +98,8 @@
             '<div class="slds-page-header__control"><ul class="slds-page-header__detail-row">' +
             '<li class="slds-page-header__detail-block kpi kpi-red"><div class="kpi-num">2</div><p class="slds-text-title">High Priority Cases</p></li>' +
             '<li class="slds-page-header__detail-block kpi kpi-green"><div class="kpi-num">5</div><p class="slds-text-title">High Priority Action Items</p></li>' +
-            '</ul></div>');
+            '</ul></div>',
+            '<span class="phicon phicon-health">' + STETH_SVG + '</span>');
 
         var filters = card('', '<div class="filter-grid">' +
             '<div class="fg-search"><label class="f-label">Search</label>' +
