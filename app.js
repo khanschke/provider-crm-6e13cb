@@ -51,9 +51,10 @@
     }
     function opts(arr) { return arr.map(function (v) { return { label: v, value: v }; }); }
     function pageHeader(ic, title, meta, actions) {
+        var fig = '<span class="slds-icon_container phicon slds-icon-standard-' + ic.replace(/_/g, '-') + '">' + icon('standard', ic, 'slds-icon_medium') + '</span>';
         return '<div class="slds-page-header slds-page-header_joined"><div class="slds-page-header__row">' +
             '<div class="slds-page-header__col-title"><div class="slds-media"><div class="slds-media__figure">' +
-            icon('standard', ic, 'slds-icon_medium') + '</div><div class="slds-media__body">' +
+            fig + '</div><div class="slds-media__body">' +
             '<div class="slds-page-header__name"><div class="slds-page-header__name-title"><h1>' +
             '<span class="slds-page-header__title slds-truncate">' + title + '</span></h1></div></div>' +
             '<p class="slds-page-header__name-meta">' + meta + '</p></div></div></div>' +
@@ -88,7 +89,7 @@
         var f = S.portfolio;
         var markets = ['All'].concat(D.PROVIDERS.map(function (p) { return p.market; }).filter(uniq));
         var owners = ['All'].concat(D.PROVIDERS.map(function (p) { return p.owner.name; }).filter(uniq));
-        var header = pageHeader('household', 'Provider Portfolio',
+        var header = pageHeader('opportunity', 'Provider Portfolio',
             D.MARKET_LABEL + ' \u00b7 ' + D.PROVIDERS.length + ' assigned accounts',
             '<div class="slds-page-header__control"><ul class="slds-page-header__detail-row">' +
             '<li class="slds-page-header__detail-block kpi kpi-red"><div class="kpi-num">2</div><p class="slds-text-title">High Priority Cases</p></li>' +
